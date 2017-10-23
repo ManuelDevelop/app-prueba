@@ -1,0 +1,13 @@
+<h1>{{titulo}}</h1>
+
+<div>
+	<form #l="ngForm" (ngSubmit)="lfonSubmit()">
+		<label>nCuenta</label>
+		<input type="text" name="nCuenta" #nCuenta="ngModel">
+		<hr>
+		<label>pass</label>
+		<input type="text" name="pass" #pass="ngModel">
+		<hr>
+		<input type="submit" name="login">
+	</form>
+</div>

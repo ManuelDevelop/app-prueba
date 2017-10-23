@@ -1,0 +1,123 @@
+*{
+    margin:2px;
+    padding:2px;
+    border:2px;
+    top
+    
+}
+
+a{  
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+a:hover{
+    color:red;
+}
+
+#fondo{
+    background-image: url(../dist/img/qw.jpg);
+    width: 100%;
+}
+form{
+    align-content: center;
+    margin:30px;
+    padding:30px;
+    color:black;
+    width: 90%;
+    height: 70%;
+    text-align: center;
+    font-size: 15px;
+    display: table;
+    border: 5px solid white;
+    text-transform: uppercase;
+}
+form fieldset{
+    text-align: center;
+}
+form fieldset legend{
+    font-size:15px;
+    text-align: center;
+    color:black;
+}
+
+form input{
+    font-size: 15px;
+    width: 100%;   
+}
+form button{
+    font-size: 15px;
+    width: 190px;
+    color:black;
+}
+
+footer{
+    display: table;
+    margin:10px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    height: 8%;
+    background: rgba(0,0,0,0.5);
+    border-radius: 0px 0px 5px 0px;
+    box-shadow: 0px 0px 10px white;
+    color:aliceblue;
+}
+
+
+/*Modificaciones a las clases */
+                                /*LOGIN*/
+
+.login-box{
+    color:aliceblue;
+    font-family: serif;
+    font-size: 25px;
+}
+.login-logo{
+    width: 500px;
+    color:white;
+    font-family: cursive;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.7);
+}
+.login-box-body{
+    font-size: 24px;
+    width: 500px;
+}
+                    /*REGISTRO*/
+
+.register-box{
+    margin:2px;
+    padding:2px;
+    width: 99%;
+    height: 100%;
+    border: 2px; 
+    align-content: center;
+}
+.register-logo{
+    color:white;
+    font-family: cursive;
+    font-weight: 400;
+    background-color: rgba(0,0,0,0.3);
+}
+.login-box-msg{
+    font-size: 35px;
+    font-family: monospace;
+}
+.register-box-body{
+    text-align: center;
+    margin-left: 30px;
+    width: 90%;
+    align-content: center;
+}
+
+/*Clases Generales*/
+.text-center{
+    align-content: center;
+}
+.row{
+    color:white;
+    font-size: 15px;
+}
