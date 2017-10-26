@@ -2,22 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector:'Login',
-	templateUrl: './login.component.html'
-    //templateUrl: '../../ExtraMario/php/index.html'
+	templateUrl: './login.component.html',
+	styleUrls:[
+	'../../../ExtraMario/bootstrap/css/bootstrap.min.css',
+	'../../../ExtraMario/dist/css/AdminLTE.css',
+	'../../../ExtraMario/Plugins/iCheck/square/blue.css',
+	'../../../ExtraMario/css/styleIni.css'
+	]
 })
 export class LoginComponent{
-	public titulo;
-	public nCuenta: String;
-	public pass: String;
+	public titulo: String;
 
 	constructor(){
 		this.titulo='este es el login';
-		this.pass="";
-		this.nCuenta="";
-	}
-
-	lfonSubmit(){
-		console.log(this.pass);
-		console.log(this.nCuenta);
 	}
 }

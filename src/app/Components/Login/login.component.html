@@ -1,13 +1,64 @@
-<h1>{{titulo}}</h1>
-
-<div>
-	<form #l="ngForm" (ngSubmit)="lfonSubmit()">
-		<label>nCuenta</label>
-		<input type="text" name="nCuenta" #nCuenta="ngModel">
-		<hr>
-		<label>pass</label>
-		<input type="text" name="pass" #pass="ngModel">
-		<hr>
-		<input type="submit" name="login">
-	</form>
-</div>
+<div class="hold-transition login-page">
+        <div id="fondo">
+        <div class="login-box">
+            <div class="login-logo">
+                <h1>RED ICO</h1>
+            </div><!--FIN Login-Logo-->
+            
+            <div class="login-box-body">
+                <form action="" method="post">
+                    <fieldset>
+                    LOGIN
+                        <div class="form-group has-feedback">
+                            <!--NUMERO DE CUENTA<br>-->
+                            <input type="text" class="form-control" placeholder="Numero Cuenta" name="numC" pattern="[0-9_-A-Za-z]{1,7}">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                    
+                        <div class="form-group has-feedback">
+                            <!--CONTRASEÑA<br>-->
+                            <input type="password" class="form-control" placeholder="Contraseña" name="pass" pattern="[A-Za-z_-0-9]{1,20}">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        
+                    <div class="row">
+                        <div class="col-xs-11">
+                            <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">INICIAR SESION</button>
+                            <button type="reset"  name="reset" class="btn btn-primary btn-block btn-flat">RESET/LIMPIAR</button>
+                        </div>
+                    </div>
+                    </fieldset>
+                </form>
+                <br>
+                <a href="#" class="text-center">OLVIDE MI CONTRASEÑA</a>
+                <a [routerLink]="['/registro']" class="text-center">REGISTRARME EN RED ICO</a>
+            </div><!--Fin login box body-->
+        </div><!--Fin login box-->
+        
+        <footer>
+            <h6>Copyright
+            <div id="vcard">
+                <div>
+                    <span class="name">RED ICO XD</span>-<span class="zip-code">56230</span>-<span class="phone">6666666666</span><br/>
+                </div>
+            </div>
+            </h6>
+            
+        </footer>
+        </div>
+        
+        <script src="../plugin/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <script src="../plugin/iCheck/icheck.min.js"></script>
+        
+        <script>
+            $(function (){
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_square-blue',
+                    radioClass: 'iradio_square-blue',
+                    increaseArea:'20%'//opcional
+                })
+            });
+        </script>
+        
+    </div>
