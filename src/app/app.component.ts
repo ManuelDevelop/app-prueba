@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent{
-  title='I am Iron Man!';
+  title='prueba!';
   log=true;
 }

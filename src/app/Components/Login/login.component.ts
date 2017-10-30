@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
 	selector:'Login',
 	templateUrl: './login.component.html',
 	styleUrls:[
-	'../../../ExtraMario/bootstrap/css/bootstrap.min.css',
 	'../../../ExtraMario/dist/css/AdminLTE.css',
 	'../../../ExtraMario/Plugins/iCheck/square/blue.css',
 	'../../../ExtraMario/css/styleIni.css'

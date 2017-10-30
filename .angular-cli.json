@@ -19,9 +19,18 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../src/ExtraMario/Plugins/fastclick/fastclick.js",
+        "../src/ExtraMario/Plugins/fullcalendar/fullcalendar.min.js",
+        "../src/ExtraMario/Plugins/iCheck/icheck.min.js",
+        "../src/ExtraMario/Plugins/slimScroll/jquery.slimscroll.min.js",
+        "../src/ExtraMario/Plugins/sparkline/jquery.sparkline.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

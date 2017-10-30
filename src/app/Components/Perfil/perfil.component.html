@@ -1,4 +1,4 @@
-<div class="hold-transition skin-blue sidebar-mini">
+
         <div class="wrapper">
             <div class="content-wrapper">
                 <section class="content">
@@ -7,7 +7,7 @@
                             <!--Imagen de perfil-->
                             <div class="box box-primary">
                                 <div class="box-body box-profile">
-                                    <img clas="profile-user-img img-responsive" src="../avatars/defect.jpg" alt="Imagen de Perfil" with="250px" height="230x">
+                                    <img clas="profile-user-img img-responsive" src="../../ExtraMario/avatars/defect.jpg" alt="Imagen de Perfil" with="250px" height="230x">
                                     <h3 clas="profile-username text-center">NOMBRE</h3>
                                     <span class="glyphicon glypicon-ok"></span>
                                     <p class="text-muted text-center">INGENIERO EN SW</p>
@@ -32,7 +32,7 @@
                                         
                                     </form>
                                     <br>
-                                    <a href="chat.php"><input type="button" class="btn btn-default btn-block" name="dejarseguir" value="Enviar chat"></a>
+                                    <a [routerLink]="['/mensajes']" [routerLinkActive]="['active']"><input type="button" class="btn btn-default btn-block" name="dejarseguir" value="Enviar chat"></a>
                                     
                                     
                                 </div><!--Fin box-body-->
@@ -253,12 +253,3 @@
             <div class="control-sidebar-bg"></div>
 
         </div><!--fin Wrapper-->
-            <!-- Bootstrap 3.3.6 -->
-        <script src="../bootstrap/js/bootstrap.min.js"></script>
-        <!-- FastClick -->
-        <script src="../plugin/fastclick/fastclick.js"></script>
-        <!-- AdminLTE App -->
-        <script src="../dist/js/app.min.js"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="../dist/js/demo.js"></script>
-    </div>

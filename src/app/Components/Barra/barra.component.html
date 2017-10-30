@@ -1,4 +1,8 @@
-<a [routerLink]="['/perfil']" [routerLinkActive]="['active']">perfil</a>
-<a [routerLink]="['/mensajes']" [routerLinkActive]="['active']">mensajes</a>
-<a [routerLink]="['/registro']" [routerLinkActive]="['active']">registro</a>
-<a [routerLink]="['/inicio']" [routerLinkActive]="['active']">inicio</a>
+<nav class="navbar navbar-default" role="navigation">
+	<ul class="nav navbar-nav">
+		<li><a [routerLink]="['/perfil']" [routerLinkActive]="['active']">perfil</a></li>
+		<li><a [routerLink]="['/mensajes']" [routerLinkActive]="['active']">mensajes</a></li>
+		<li><a [routerLink]="['/registro']" [routerLinkActive]="['active']">registro</a></li>
+		<li><a [routerLink]="['/inicio']" [routerLinkActive]="['active']">inicio</a></li>
+	</ul>
+</nav>
