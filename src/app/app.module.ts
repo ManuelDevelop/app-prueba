@@ -14,6 +14,7 @@ import { RegistroComponent } from './Components/Registro/registro.Component';
 import { Error404Component } from './Components/Error404/error404.Component';
 import { BarraComponent } from './Components/Barra/barra.Component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

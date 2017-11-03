@@ -1,30 +1,33 @@
 
-        <div id="fondo">
+        <div id="fondo" *ngIf="status!='Exito'">
         <div class="login-box">
             <div class="login-logo">
                 <h1>RED ICO</h1>
             </div><!--FIN Login-Logo-->
-            
+
+            <div class="alert alert-danger" *ngIf="status=='Error'">
+                Inicia Secion
+            </div>
+
             <div class="login-box-body">
-                <form action="" method="post">
+                <form #loginForm="ngForm" (ngSubmit)="enviarLogin()">
                     <fieldset>
                     LOGIN
                         <div class="form-group has-feedback">
                             <!--NUMERO DE CUENTA<br>-->
-                            <input type="text" class="form-control" placeholder="Numero Cuenta" name="numC" pattern="[0-9_-A-Za-z]{1,7}">
+                            <input type="text" class="form-control" placeholder="Numero Cuenta" name="nCuenta" #nCuenta="ngModel" [(ngModel)]="user.nCuenta" >
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                     
                         <div class="form-group has-feedback">
                             <!--CONTRASEÑA<br>-->
-                            <input type="password" class="form-control" placeholder="Contraseña" name="pass" pattern="[A-Za-z_-0-9]{1,20}">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="pass" #pass="ngModel" [(ngModel)]="user.pass" >
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                         
                     <div class="row">
                         <div class="col-xs-11">
                             <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">INICIAR SESION</button>
-                            <button type="reset"  name="reset" class="btn btn-primary btn-block btn-flat">RESET/LIMPIAR</button>
                         </div>
                     </div>
                     </fieldset>

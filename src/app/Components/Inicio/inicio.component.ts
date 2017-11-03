@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
 	selector:'Inicio',
@@ -10,11 +12,20 @@ import { Component } from '@angular/core';
 	'../../../ExtraMario/css/stylePC.css'
 	]
 })
-export class InicioComponent{
-	public titulo;
+export class InicioComponent implements OnInit{
+
 	
-	constructor(){
-		this.titulo='este es el inicio';
+	constructor(
+			private logservice: LoginService,
+			private route:ActivatedRoute,
+			private router:Router
+		){}
+
+	ngOnInit(){
+		let stats=this.logservice.getIdentidad();
+		if(stats==null){
+			this.router.navigate(['/']);	
+		}
 	}
 
 }

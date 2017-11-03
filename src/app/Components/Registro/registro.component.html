@@ -5,17 +5,25 @@
                     <h1>RED SOCIAL</h1>
                 </div><!--Fin register logo-->
                 
-                <div class="register-box-body" ng-app="modApp" ng-controller="ctrlApp">
+                <div class="register-box-body" >
                     <p class="login-box-msg">REGISTRATE EN RED ICO</p>
-                    <form action="" method="post" ng-submit="enviar()">
+                    
+                    <div class="alert alert-success" *ngIf="message=='Exito'">
+                        Registro Exitoso
+                    </div>
+                    <div class="alert alert-danger" *ngIf="message=='Error'">
+                        Lo sentimos ocurrio un probelma :( 
+                    </div>
+
+                    <form #registerForm="ngForm" (ngSubmit)="enviardatos()">
                         <!--<fieldset>-->
                             <div class="form-group has-feedback">
-                                <input ng-model="nCuenta" type="text" name="cuenta" class="form-control" placeholder="Numero de Cuenta"  required>
+                                <input  type="text" name="cuenta" #nCuenta="ngModel" [(ngModel)]="user.nCuenta" class="form-control" placeholder="Numero de Cuenta"  required>
                                 <span class="glyphicon glyphicon-star form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input ng-model="pass" type="password" name="contrasena" class="form-control" placeholder="Contraseña" required>
+                                <input  type="password" name="contrasena" #pass="ngModel" [(ngModel)]="user.pass" class="form-control" placeholder="Contraseña" required>
                                 <span class="glyphicon glyphicon-star form-control-feedback"></span>
                             </div>
 
@@ -25,27 +33,27 @@
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input ng-model="email" type="email" name="email" class="form-control" placeholder="Email"  required>  
+                                <input  type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="Email"  required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             
                             <div class="form-group has-feedback">
-                                <input ng-model="celular" type="text" name="celular" class="form-control" placeholder="Celular" required>  
+                                <input  type="text" name="celular" #celular="ngModel" [(ngModel)]="user.celular" class="form-control" placeholder="Celular" required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input ng-model="name" type="text" name="nombre" class="form-control" placeholder="Nombres"  required>  
+                                <input  type="text" name="nombre" #name="ngModel" [(ngModel)]="user.name" class="form-control" placeholder="Nombres"  required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input ng-model="paterno" type="text" name="apellido paterno" class="form-control" placeholder="Apellido Paterno" required>  
+                                <input  type="text" name="apellido paterno" #paterno="ngModel" [(ngModel)]="user.paterno" class="form-control" placeholder="Apellido Paterno" required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             
                             <div class="form-group has-feedback">
-                                <input ng-model="materno" type="text" name="apellido maternno" class="form-control" placeholder="Apellido Materno" required>  
+                                <input  type="text" name="apellido maternno" #materno="ngModel" [(ngModel)]="user.materno" class="form-control" placeholder="Apellido Materno" required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             
@@ -64,7 +72,7 @@
                             
                         <!--</fieldset>-->
 
-                        <br><a href="index.php" class="text-center">Tengo actualmente una cuenta</a>
+                        <br><a href="/" class="text-center">Tengo actualmente una cuenta</a>
                           
                     </form><!--Fin form-->
                     
