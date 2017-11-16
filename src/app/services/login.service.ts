@@ -7,14 +7,21 @@ import { GLOBAL } from './global';
 @Injectable()
 export class LoginService{
 	public url: string;
-	public identidad;
+	public identi;
 
 	constructor(private http:Http){
 		this.url=GLOBAL.url;
 	}
 
-	singup(user_to_login){
-		let params= JSON.stringify(user_to_login);
+	registrar(user_to_post){
+		let params= JSON.stringify(user_to_post);
+		let headers= new Headers({'Content-Type':'application/json'});
+
+		return this.http.post(this.url+'user',params,{headers:headers}).map(res => res.json());
+	}
+
+	loguear(user_to_log){
+		let params= JSON.stringify(user_to_log);
 		let headers= new Headers({'Content-Type':'application/json'});
 
 		return this.http.post(this.url+'login',params,{headers:headers}).map(res => res.json());
@@ -22,13 +29,12 @@ export class LoginService{
 
 	getIdentidad(){
 		let identidad=JSON.parse(localStorage.getItem('identidadICO'));
-
 		if(identidad != "undefined"){
-			this.identidad=identidad;
+			this.identi=identidad;
 		}
 		else{
-			this.identidad=null;
+			this.identi=null;
 		}
-		return this.identidad;
+		return this.identi;
 	}
 }

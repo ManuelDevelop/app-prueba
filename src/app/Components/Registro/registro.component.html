@@ -4,56 +4,57 @@
                 <div class="register-logo">
                     <h1>RED SOCIAL</h1>
                 </div><!--Fin register logo-->
-                
-                <div class="register-box-body" >
-                    <p class="login-box-msg">REGISTRATE EN RED ICO</p>
-                    
-                    <div class="alert alert-success" *ngIf="message=='Exito'">
-                        Registro Exitoso
-                    </div>
-                    <div class="alert alert-danger" *ngIf="message=='Error'">
-                        Lo sentimos ocurrio un probelma :( 
-                    </div>
 
-                    <form #registerForm="ngForm" (ngSubmit)="enviardatos()">
+                
+                <div class="alert alert-success" *ngIf="status=='true'" >
+                    El registro fue un exito :)  ahora puedes acceder <a [routerLink]="['/login']"></a>
+                </div>
+                
+                <div class="alert alert-danger" *ngIf="status=='false'">
+                    Lo sentimos Ocurrio un error inesperado :,(
+                </div>
+
+                <div class="register-box-body">
+                    <p class="login-box-msg">REGISTRATE EN RED ICO</p>
+                    <form #registerForm="ngForm" (ngSubmit)="enviarRegistro()">
                         <!--<fieldset>-->
                             <div class="form-group has-feedback">
-                                <input  type="text" name="cuenta" #nCuenta="ngModel" [(ngModel)]="user.nCuenta" class="form-control" placeholder="Numero de Cuenta"  required>
+                                <input type="text" name="cuenta" #nCuenta="ngModel" [(ngModel)]="user.nCuenta" class="form-control" placeholder="Numero de Cuenta"  required>
                                 <span class="glyphicon glyphicon-star form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input  type="password" name="contrasena" #pass="ngModel" [(ngModel)]="user.pass" class="form-control" placeholder="Contraseña" required>
+                                <input type="password" name="contrasena" #pass="ngModel" [(ngModel)]="user.pass" class="form-control" placeholder="Contraseña" required>
                                 <span class="glyphicon glyphicon-star form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input type="text" name="repcontrasena" class="form-control" placeholder="Confirmar Contrasena"  required>
+                                <input type="password" name="repcontrasena" class="form-control" placeholder="Confirmar Contrasena"  required>
                                 <span class="glyphicon glyphicon-star form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input  type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="Email"  required>  
+                                <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="Email"  required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             
                             <div class="form-group has-feedback">
-                                <input  type="text" name="celular" #celular="ngModel" [(ngModel)]="user.celular" class="form-control" placeholder="Celular" required>  
+                                <input type="text" name="celular" #celular="ngModel" [(ngModel)]="user.celular" class="form-control" placeholder="Celular" required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input  type="text" name="nombre" #name="ngModel" [(ngModel)]="user.name" class="form-control" placeholder="Nombres"  required>  
+                                <input type="text" name="nombre" #name="ngModel" [(ngModel)]="user.name" class="form-control" placeholder="Nombres"  required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
 
                             <div class="form-group has-feedback">
-                                <input  type="text" name="apellido paterno" #paterno="ngModel" [(ngModel)]="user.paterno" class="form-control" placeholder="Apellido Paterno" required>  
+                                <input type="text" name="apellido paterno" #paterno="ngModel" [(ngModel)]="user.paterno" class="form-control" placeholder="Apellido Paterno" required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             
                             <div class="form-group has-feedback">
-                                <input  type="text" name="apellido maternno" #materno="ngModel" [(ngModel)]="user.materno" class="form-control" placeholder="Apellido Materno" required>  
+                                <input type="text" name="apellido maternno" #materno="ngModel" [(ngModel)]="user.materno" class="form-control" placeholder="Apellido Materno" required>  
                                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                             </div>
                             
@@ -72,7 +73,7 @@
                             
                         <!--</fieldset>-->
 
-                        <br><a href="/" class="text-center">Tengo actualmente una cuenta</a>
+                        <br><a [routerLink]="['/']" class="text-center">Tengo actualmente una cuenta</a>
                           
                     </form><!--Fin form-->
                     
@@ -80,33 +81,4 @@
                     
                 </div><!--Fin register box body-->
             </div><!--Fin register box-->
-            
-            <footer>
-                    <h6>Copyright
-                    <div id="vcard">
-                        <div>
-                            <span class="name">Red Social</span>-<span class="zip-code">56230</span>-<span class="phone">6666666666</span>-<span class="e-mail">marioavillegasl@gmail.com</span><br/>
-
-                            <script type="text/javascript">
-                                if(localStorage.pagecount){
-                                    localStorage.pagecount=Number(localStorage.pagecount)+1;
-                                }else{
-                                    localStorage.pagecount=1;
-                                }
-                                document.write("Visitas en la pagina "+localStorage.pagecount+" veces");
-                            </script>
-                        </div>
-                    </div>
-                    </h6>
-                </footer>
-                
         </div><!--Fin id fondo-->
-        <script>
-          $(function () {
-            $('input').iCheck({
-              checkboxClass: 'icheckbox_square-blue',
-              radioClass: 'iradio_square-blue',
-              increaseArea: '20%' // optional
-            });
-          });
-        </script>

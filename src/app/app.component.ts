@@ -1,5 +1,6 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component,OnInit,DoCheck } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { GLOBAL } from './services/global';
 import { LoginService } from './services/login.service';
 
 @Component({

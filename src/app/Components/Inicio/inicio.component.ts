@@ -17,6 +17,7 @@ import { InicioService } from '../../services/inicio.service';
 	],
 	providers:[ LoginService,InicioService ]
 })
+
 export class InicioComponent implements OnInit{
 
 	public identida: User;
@@ -45,7 +46,7 @@ export class InicioComponent implements OnInit{
 	}
 
 	publicarpost(){
-		this.publicacion.user_id=this.identida._id;
+		//this.publicacion.user_id=this.identida._id;
 		this.iniservice.publicar(this.publicacion).subscribe(
 			Response=>{
 				this.publicacion=Response.publicacion;

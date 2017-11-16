@@ -1,36 +1,40 @@
-<div class="container-fluid">
+<div id="fondo">
+        <div class="login-box">
+            <div class="login-logo">
+                <h1>RED ICO</h1>
+            </div><!--FIN Login-Logo-->
 
-    <nav class="navbar navbar-inverse ">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#app-menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="">
-                    RedICO
-                </a>
+            <div class="alert alert-danger" *ngIf="status=='false'">
+                    Lo sentimos Ocurrio un error inesperado :,(
             </div>
-            <div class="collapse navbar-collapse" id="app-menu">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a [routerLink]="['/']" [routerLinkActive]="['active']">
-                            <span class="glyphicon glyphicon-log-in"></span>
-                            Login
-                        </a>
-                    </li>
-                    <li>
-                        <a [routerLink]="['/registro']" [routerLinkActive]="['active']">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                            Registrarse
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+            <div class="login-box-body">
+                <form #loginForm="ngForm" (ngSubmit)="loguear()">
+                    <fieldset>
+                    LOGIN
+                        <div class="form-group has-feedback">
+                            <!--NUMERO DE CUENTA<br>-->
+                            <input type="text" class="form-control" placeholder="Numero Cuenta" name="numC" #nCuenta="ngModel" [(ngModel)]="user.nCuenta" pattern="[0-9]{7}">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                    
+                        <div class="form-group has-feedback">
+                            <!--CONTRASEÑA<br>-->
+                            <input type="password" class="form-control" placeholder="Contraseña" name="pass" #pass="ngModel" [(ngModel)]="user.pass">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        
+                    <div class="row">
+                        <div class="col-xs-11">
+                            <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">INICIAR SESION</button>
+                            <button type="reset"  name="reset" class="btn btn-primary btn-block btn-flat">RESET/LIMPIAR</button>
+                        </div>
+                    </div>
+                    </fieldset>
+                </form>
+                <br>
+                <a  class="text-center">OLVIDE MI CONTRASEÑA</a>
+                <a [routerLink]="['/registro']" class="text-center">REGISTRARME EN RED ICO</a>
+            </div><!--Fin login box body-->
+        </div><!--Fin login box-->
 </div>

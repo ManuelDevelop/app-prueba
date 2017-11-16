@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit,DoCheck} from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
+import { GLOBAL } from '../../services/global';
 import { LoginService } from '../../services/login.service';
+
 
 @Component({
 	selector:'Login',
@@ -11,54 +13,44 @@ import { LoginService } from '../../services/login.service';
 	'../../../ExtraMario/Plugins/iCheck/square/blue.css',
 	'../../../ExtraMario/css/styleIni.css'
 	],
-	providers:[ LoginService ]
+	providers:[LoginService]
 })
 export class LoginComponent implements OnInit{
-	
-	public user: User;
-	public identida: User;
-	public status: string;
+
+	public user:User;
+	public identidad:User;
+	public status:string;
 
 	constructor(
-		private logservice: LoginService,
-		private route:ActivatedRoute,
-		private router:Router
+		private _route:ActivatedRoute,
+		private _router:Router,
+		private loginservice:LoginService
 		){
 		this.user=new User("","","","","","","","","");
 	}
-
+	
 	ngOnInit(){
-		let stats=this.logservice.getIdentidad();
-		if(stats==null){
-			this.status="Error";
-		}
-		else{
-			this.status="Exito";
-		}
+		console.log("OnInit de login");
+		this.status="";
 	}
 
-	enviarLogin(){
-		this.logservice.singup(this.user).subscribe(
-			Response=>{
-				this.identida=Response.users;
-				this.identida.pass="";
-
-				if(!this.identida || !this.identida._id){
-					alert("Incorrecto");
-					this.status="Error";
-					localStorage.removeItem('identidadICO');
+	loguear(){
+		this.loginservice.loguear(this.user).subscribe(
+			response=>{
+				this.identidad=response.users;
+				if(!this.identidad || !this.identidad._id){
+					alert("No se pudo Acceder");	
 				}
 				else{
-					this.status="Exito";
-					this.user.pass="";
-					localStorage.setItem('identidadICO',JSON.stringify(this.identida));
-					this.router.navigate(['/inicio']);
+					this.identidad.pass="";
+					localStorage.setItem('identidadICO',JSON.stringify(this.identidad));
+					this._router.navigate(['/inicio']);
 				}
+				this.user=new User("","","","","","","","","");
 			},
-			Error=>{
-				this.status="Error";
-				this.user.pass="";
-				localStorage.removeItem('identidadICO');
+			error=>{
+				this.status="false";
+				console.log(<any>error);
 			}
 			);
 	}

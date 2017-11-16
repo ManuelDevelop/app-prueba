@@ -6,17 +6,14 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 	templateUrl: './barra.component.html'
 })
 export class BarraComponent{
-	
-	
+
 	constructor(
-			private route:ActivatedRoute,
-			private router:Router
-		){
-	}
+		private _route:ActivatedRoute,
+		private _router:Router
+		){}
 
 	logout(){
 		localStorage.removeItem('identidadICO');
-		this.router.navigate(['/']);
+		this._router.navigate(['/login']);
 	}
-
 }
