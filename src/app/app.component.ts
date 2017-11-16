@@ -27,8 +27,6 @@ export class AppComponent implements OnInit,DoCheck{
 			this.log=true;
 			this.router.navigate(['/inicio']);
 		}
-		console.log("oninit");
-		console.log(this.log);
 	}
 
 	ngDoCheck(){

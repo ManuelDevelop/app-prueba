@@ -1,60 +1,36 @@
+<div class="container-fluid">
 
-        <div id="fondo" *ngIf="status!='Exito'">
-        <div class="login-box">
-            <div class="login-logo">
-                <h1>RED ICO</h1>
-            </div><!--FIN Login-Logo-->
-
-            <div class="alert alert-danger" *ngIf="status=='Error'">
-                Inicia Secion
+    <nav class="navbar navbar-inverse ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#app-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="">
+                    RedICO
+                </a>
             </div>
-
-            <div class="login-box-body">
-                <form #loginForm="ngForm" (ngSubmit)="enviarLogin()">
-                    <fieldset>
-                    LOGIN
-                        <div class="form-group has-feedback">
-                            <!--NUMERO DE CUENTA<br>-->
-                            <input type="text" class="form-control" placeholder="Numero Cuenta" name="nCuenta" #nCuenta="ngModel" [(ngModel)]="user.nCuenta" >
-                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                        </div>
-                    
-                        <div class="form-group has-feedback">
-                            <!--CONTRASEÑA<br>-->
-                            <input type="password" class="form-control" placeholder="Contraseña" name="pass" #pass="ngModel" [(ngModel)]="user.pass" >
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                        </div>
-                        
-                    <div class="row">
-                        <div class="col-xs-11">
-                            <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">INICIAR SESION</button>
-                        </div>
-                    </div>
-                    </fieldset>
-                </form>
-                <br>
-                <a href="#" class="text-center">OLVIDE MI CONTRASEÑA</a>
-                <a [routerLink]="['/registro']" class="text-center">REGISTRARME EN RED ICO</a>
-            </div><!--Fin login box body-->
-        </div><!--Fin login box-->
-        
-        <footer>
-            <h6>Copyright
-            <div id="vcard">
-                <div>
-                    <span class="name">RED ICO XD</span>-<span class="zip-code">56230</span>-<span class="phone">6666666666</span><br/>
-                </div>
+            <div class="collapse navbar-collapse" id="app-menu">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a [routerLink]="['/']" [routerLinkActive]="['active']">
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/registro']" [routerLinkActive]="['active']">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Registrarse
+                        </a>
+                    </li>
+                </ul>
             </div>
-            </h6>
-            
-        </footer>
         </div>
-        <script>
-            $(function (){
-                $('input').iCheck({
-                    checkboxClass: 'icheckbox_square-blue',
-                    radioClass: 'iradio_square-blue',
-                    increaseArea:'20%'//opcional
-                })
-            });
-        </script>
+    </nav>
+</div>
