@@ -25,4 +25,22 @@ export class InicioService{
 
 		return this.http.post(this.url+'avatar/'+userid,params,{headers:headers}).map(res => res.json());
 	}
+
+	getPublicaciones(){
+		return this.http.get(this.url+'publicacion').map(res=>res.json());
+	}
+
+	getComentarios(publicacion_id){
+		let params= JSON.stringify(publicacion_id);
+		let headers= new Headers({'Content-Type':'application/json'});
+
+		return this.http.post(this.url+'comentarios',params,{headers:headers}).map(res => res.json());
+	}
+
+	publicarComentario(comentario_to_post){
+		let params= JSON.stringify(comentario_to_post);
+		let headers= new Headers({'Content-Type':'application/json'});
+
+		return this.http.post(this.url+'comentario',params,{headers:headers}).map(res => res.json());
+	}
 }
