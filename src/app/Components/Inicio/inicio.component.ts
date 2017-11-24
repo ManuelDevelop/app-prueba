@@ -6,6 +6,7 @@ import { Comentario } from '../../models/comentarios';
 import { Foto } from '../../models/fotos';
 import { LoginService } from '../../services/login.service';
 import { InicioService } from '../../services/inicio.service';
+import { GLOBAL } from '../../services/global';
 
 @Component({
 	selector:'Inicio',
@@ -25,6 +26,7 @@ export class InicioComponent implements OnInit{
 	public publicacion: Publicacion;
 	public comentario:Comentario;
 	public foto: Foto;
+	public url:String;
 	public filefoto;
 	public listpublicaciones:Publicacion[];
 
@@ -34,7 +36,8 @@ export class InicioComponent implements OnInit{
 			private route:ActivatedRoute,
 			private router:Router
 		){
-		this.publicacion= new Publicacion("","","","");
+		this.url=GLOBAL.url;
+		this.publicacion= new Publicacion("","","","","");
 		this.foto=new Foto("","","","","");
 		this.comentario=new Comentario("","","","","");
 	}
@@ -90,6 +93,7 @@ export class InicioComponent implements OnInit{
 		this.iniservice.publicarComentario(this.comentario).subscribe(
 			Response=>{
 				console.log("exito");
+
 			},
 			Error=>{
 				console.log(<any>Error);
