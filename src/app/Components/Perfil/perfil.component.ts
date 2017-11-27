@@ -72,6 +72,7 @@ export class PerfilComponent implements OnInit{
 		this.iniservice.publicar(this.publicacion).subscribe(
 			Response=>{
 				this.publicacion=Response.publicacion;
+				this.obtenerPublicaciones();
 			},
 			Error=>{
 
@@ -88,6 +89,7 @@ export class PerfilComponent implements OnInit{
 							console.log(<any>Error);
 						});
 				}
+		this.publicacion= new Publicacion("","","","","");
 	}
 
 	enviarComentario(publicacion_id){

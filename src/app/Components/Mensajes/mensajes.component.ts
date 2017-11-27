@@ -27,4 +27,8 @@ export class MensajesComponent implements OnInit{
 			this.identida=stats;
 		}
 	}
+
+	getMensajes(){
+		
+	}
 }

@@ -53,27 +53,18 @@ export class InicioComponent implements OnInit{
 		this.listarPublicaciones();	
 	}
 
+
 	publicarpost(){
 		this.publicacion.user_id=this.identida._id;
 		this.iniservice.publicar(this.publicacion).subscribe(
 			Response=>{
 				this.publicacion=Response.publicacion;
+				this.publicacion= new Publicacion("","","","","");
+				this.listarPublicaciones();
 			},
 			Error=>{
-
+				this.publicacion= new Publicacion("","","","","");
 			});
-				if(this.filefoto){
-					console.log("entro");
-					this.foto.publicaion_id=this.publicacion._id;
-					this.foto.user_id=this.identida._id;
-					this.iniservice.publicarfoto(this.foto,this.filefoto,this.identida._id).subscribe(
-						Response=>{
-							console.log("exito");	
-						},
-						Error=>{
-							console.log(<any>Error);
-						});
-				}
 	}
 
 	listarPublicaciones(){
@@ -98,5 +89,6 @@ export class InicioComponent implements OnInit{
 			Error=>{
 				console.log(<any>Error);
 			});
+		this.comentario=new Comentario("","","","","");
 	}
 }
